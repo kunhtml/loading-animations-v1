@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(3, 3, 143, 0.89);
+}
+
+.loadingBx {
+    position: relative;
+    text-align: center;
+}
+
+.loading {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 15px solid #00ffff;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    animation: rotate1 linear 2s infinite;
+    position: relative;
+}
+
+.loading::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    bottom: 25px;
+    left: 25px;
+    border-radius: 50%;
+    border: 10px solid #00ffff;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    animation: rotate2 linear 2s infinite;
+}
+
+.loadingText {
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+    font-size: 24px;
+    color: #00ffff;
+    animation: changeColor 4s infinite;
+}
+
+.loadingText span {
+    animation: matrixEffect 2s infinite;
+    opacity: 0;
+}
+
+@keyframes matrixEffect {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+.loadingText span:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.loadingText span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.loadingText span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.loadingText span:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.loadingText span:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.loadingText span:nth-child(6) {
+    animation-delay: 0.6s;
+}
+.loadingText span:nth-child(7) {
+    animation-delay: 0.7s;
+}
+.loadingText span:nth-child(8) {
+    animation-delay: 0.8s;
+}
+.loadingText span:nth-child(9) {
+    animation-delay: 0.9s;
+}
+.loadingText span:nth-child(10) {
+    animation-delay: 1s;
+}
+
+@keyframes changeColor {
+    0% {
+        border-color: #00ffff;
+        color: #00ffff;
+    }
+    25% {
+        border-color: #ff00ff;
+        color: #ff00ff;
+    }
+    50% {
+        border-color: #ffff00;
+        color: #ffff00;
+    }
+    75% {
+        border-color: #ff0000;
+        color: #ff0000;
+    }
+    100% {
+        border-color: #00ffff;
+        color: #00ffff;
+    }
+}
+
+@keyframes rotate1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-720deg);
+    }
+}
